@@ -21,12 +21,12 @@ from ipv8.messaging.lazy_payload import VariablePayload, vp_compile
 from ipv8.peer import Peer
 from ipv8_service import IPv8
 
-# ── Identity — fill these in ───────────────────────────────────────────────────
+# ── Identity ───────────────────────────────────────────────────
 EMAIL = "a.murali-2@student.tudelft.nl"           
 GITHUB_URL = "https://github.com/CynicalStoik/Blockchain"  
 KEY_FILE = "my_key.pem"                          
 
-# ── Lab 1 constants (do not change) ───────────────────────────────────────────
+# ── Lab 1 constants ───────────────────────────────────────────
 COMMUNITY_ID = bytes.fromhex("2c1cc6e35ff484f99ebdfb6108477783c0102881")
 SERVER_PUBLIC_KEY_BIN = bytes.fromhex(
     "4c69624e61434c504b3a86b23934a28d669c390e2d1fc0b0870706c4591cc0cb1"
@@ -178,20 +178,6 @@ class Lab1Community(Community):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# Key management helpers
-# ══════════════════════════════════════════════════════════════════════════════
-
-def _check_credentials() -> None:
-    """Warn the user if they forgot to fill in EMAIL / GITHUB_URL."""
-    if EMAIL.endswith("@student.tudelft.nl") and "your.name" in EMAIL:
-        print("[Error] Please set your EMAIL in main.py before running.")
-        sys.exit(1)
-    if "you/your-repo" in GITHUB_URL:
-        print("[Error] Please set your GITHUB_URL in main.py before running.")
-        sys.exit(1)
-
-
-# ══════════════════════════════════════════════════════════════════════════════
 # IPv8 runner
 # ══════════════════════════════════════════════════════════════════════════════
 
@@ -236,7 +222,6 @@ async def run_client(email: str, github_url: str, nonce: int) -> None:
 # ══════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
-    _check_credentials()
 
     print(f"[Info] Email      : {EMAIL}")
     print(f"[Info] GitHub URL : {GITHUB_URL}")
