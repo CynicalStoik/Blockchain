@@ -1,14 +1,7 @@
 """
 IPv8 Lab 1 client — PoW submission
 ====================================
-Fill in EMAIL and GITHUB_URL below, then run:
-    python main.py
 
-The script will:
-  1. Load (or generate) a curve25519 key in my_key.pem
-  2. Mine the Proof-of-Work nonce using all available CPU cores
-  3. Join the Lab 1 community and discover the server peer
-  4. Send the submission message and print the server response
 """
 
 from __future__ import annotations
@@ -29,9 +22,9 @@ from ipv8.peer import Peer
 from ipv8_service import IPv8
 
 # ── Identity — fill these in ───────────────────────────────────────────────────
-EMAIL = "your.name@student.tudelft.nl"           # your TU Delft email
-GITHUB_URL = "https://github.com/you/your-repo"  # your public GitHub repo URL
-KEY_FILE = "my_key.pem"                          # key is saved/loaded here
+EMAIL = "a.murali-2@student.tudelft.nl"           
+GITHUB_URL = "https://github.com/CynicalStoik/Blockchain"  
+KEY_FILE = "my_key.pem"                          
 
 # ── Lab 1 constants (do not change) ───────────────────────────────────────────
 COMMUNITY_ID = bytes.fromhex("2c1cc6e35ff484f99ebdfb6108477783c0102881")
